@@ -1,0 +1,38 @@
+{
+  "name": "angular-schema-form-datepicker-with-options",
+  "main": [
+    "bootstrap-datepicker.js"
+  ],
+  "version": "0.4.0",
+  "authors": [
+    "Textalk",
+    "David Jensen <david.lgj@gmail.com>",
+    "Leandro Bessone <leandro.coding@gmail>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular-schema-form",
+    "schema-form",
+    "form",
+    "json",
+    "json-schema",
+    "schema"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "coverage"
+  ],
+  "dependencies": {
+    "pickadate": "~3.5.3"
+  },
+  "devDependencies": {
+    "angular-schema-form": ">= 0.7",
+    "angular-mocks": ">= 1.2"
+  }
+}

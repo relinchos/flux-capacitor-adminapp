@@ -1,0 +1,37 @@
+// =========================================================
+//
+// 	FCaa.less v0.0.1
+//
+//  Long name:	Flux-Capacitor Angular Animations Stylesheet
+//
+//	MIT License - Author: Leandro Bessone
+//
+// =========================================================
+
+
+
+// FADE
+// ====
+
+// Fade ng-if
+
+// Animations
+
+.FCaa-ng-if {
+}
+
+.FCaa-ng-if.ng-enter, .FCaa-ng-if.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.FCaa-ng-if.ng-enter,
+.FCaa-ng-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.FCaa-ng-if.ng-leave,
+.FCaa-ng-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+

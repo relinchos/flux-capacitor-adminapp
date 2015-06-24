@@ -1,0 +1,51 @@
+<div ui-view>
+	<div class="col-md-12" >
+
+		<table class="list-table ">
+			<thead>
+				<tr>
+					<th class="list-table-col-id text-center">id</th>
+					<th>Full name</th>
+					<!-- <th>birth date</th> -->
+					
+					<th>e-mail</th>
+					<th class="text-center">Roles</th>
+					<th class="text-center">User</th>
+
+					<th class="text-center">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="person in personList">
+					<td class="list-table-col-id text-center">
+						<span popover-trigger="click " popover-popup-delay="250" popover-placement="top"  popover="{{person.id }} ">…{{person.id | limitTo: -4 }} </span>
+					</td>
+					<th>{{ person.fullName }}</th>
+					<!-- <td>{{person.birthDate}}</td> -->
+					
+					<td>{{ person.email }}</td>
+
+					<td class="text-center">
+						<!-- <span ng-repeat="role in person.roles" ng-bind="role"></span> -->
+						<div role-icon="person.roles"></div>
+					</td>
+					
+
+					<td class="text-center">
+						<span class="fa fa-user" ng-if="person.userId" style="color: #54e595"></span>
+						<span class="fa fa-minus" ng-if="!person.userId"></span>	
+					</td>
+
+					<td class="list-table-col-action text-center">
+						<a class="btn btn-xs btn-default" ui-sref="person.details({ personId: person.id })" >Details</a>
+						<a class="btn btn-xs btn-danger" ng-click="person_delete( person.id )" >Delete</a>
+						<a class="btn btn-xs fa fa-eye" ng-click=" inspectJSON( person )" ng-if="FcSession.userHasRole('admin')"> JSON</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+	</div>
+</div>

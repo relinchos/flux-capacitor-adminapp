@@ -1,0 +1,79 @@
+<div>
+
+	<div id="content" > <!-- class="container-fluid" -->
+
+		<navbar></navbar>
+
+		<!-- <div ng-include="'app/main/layout/navbar/navbar.html'"></div> -->
+
+		<div class="base-layout-subnavbar">
+
+			<div class="layout-subnavbar-comodin-box">
+				
+			</div>
+
+			<div class="layout-subnavbar-content-box container-fluid">
+				
+
+				
+						<statenav></statenav>
+
+				<!-- <div ui-view="subnavbar" class="layout-subnavbar-view"></div>  -->
+				
+					
+			</div>
+		</div>
+
+
+
+		<div class="base-layout-menu-pane">
+			<menubar></menubar>
+		</div>
+
+		<div class="base-layout-body-pane">
+			<div class="layout-body-row">
+				
+				<div class="col-md-12" >
+				
+					<div ui-view="body" class="layout-body-view">
+						
+						 
+						 <div class="text-center">
+
+						 This software is under heavy development.
+						 <br>
+						 Sory if you experience wrong behaviours & we would <span class="fa fa-heart-o"></span> to get feedback from you!!!
+
+						 <br>
+						 <br>
+						 <br>
+						 <small>{{ anda }}</small>
+
+						 </div>
+
+
+					</div>
+
+
+					<hr/>
+
+					<div ng-if="FcSession.userHasRole('admin')" style="color: #ecf0f1" class="text-center">
+						<small>{{ FcSession.id }}</small>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<toaster-container toaster-options="{
+	'position-class': 'toast-top-full-width',
+	'time-out': 3300
+}">
+</toaster-container>
+
+</div>
+

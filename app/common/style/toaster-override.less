@@ -1,0 +1,68 @@
+#toast-container > div {
+
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+  // -moz-box-shadow: 0 0 12px #999999;
+  // -webkit-box-shadow: 0 0 12px #999999;
+  // box-shadow: 0 0 12px #999999;
+
+
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+
+}
+
+#toast-container > :hover {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 100%;
+  margin: auto;
+}
+
+
+:not(.no-enter)#toast-container > div.ng-enter,
+:not(.no-leave)#toast-container > div.ng-leave
+{ 
+
+	-webkit-transition: all 210ms cubic-bezier(0.110, 0.350, 0.635, 0.895); 
+	-moz-transition: all 210ms cubic-bezier(0.110, 0.350, 0.635, 0.895); 
+	-o-transition: all 210ms cubic-bezier(0.110, 0.350, 0.635, 0.895); 
+	transition: all 210ms cubic-bezier(0.110, 0.350, 0.635, 0.895); 
+} 
+
+:not(.no-enter)#toast-container > div.ng-enter.ng-enter-active, 
+:not(.no-leave)#toast-container > div.ng-leave {
+    opacity: 1;   
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+
+}
+
+:not(.no-leave)#toast-container > div.ng-leave.ng-leave-active,
+:not(.no-enter)#toast-container > div.ng-enter {
+    opacity: 0.5;
+    -webkit-transform: translate(0,-60px);
+    -moz-transform: translate(0,-60px);
+    -o-transform: translate(0,-60px);
+    -ms-transform: translate(0,-60px);
+    transform: translate(0,-60px);
+}

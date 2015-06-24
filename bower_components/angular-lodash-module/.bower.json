@@ -1,0 +1,18 @@
+{
+  "name": "angular-lodash-module",
+  "version": "1.1.0",
+  "main": "./angular-lodash-module.js",
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "homepage": "https://github.com/kmc059000/angular-lodash-module",
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.0",
+    "commit": "6783bbc1d31715cb82f40cf789049ef1c3d4f23f"
+  },
+  "_source": "git://github.com/kmc059000/angular-lodash-module.git",
+  "_target": "~1.1.0",
+  "_originalSource": "angular-lodash-module"
+}

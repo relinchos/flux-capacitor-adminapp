@@ -1,0 +1,58 @@
+<div class="col-md-offset-4 col-md-4"  ng-controller="SignupCtrl">
+
+
+
+	<div class="signupform-brand-header">sign up</div>
+
+	<form action="" class="signupform-form" role="form" name="signupform" novalidate ng-submit=" submit( signupform ) ">
+
+		<fieldset>
+
+			<div class="form-group">				
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" class="form-control input-lg" placeholder="e-mail address" required ng-model="credentials.email">
+				<p class="help-block empty-height-holder"></p>
+			</div>
+
+			<div class="form-group">				
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" class="form-control input-lg" required ng-model="credentials.password">
+				<p class="help-block empty-height-holder"></p>
+			</div>
+
+
+			<hr>
+
+			<div class="form-group">
+				<div class="pull-right">
+					<button type="submit" class="btn btn-default"> Sign up </button>
+				</div>
+			</div>
+
+		</fieldset>
+
+	</form>
+
+	<div>
+		<a href="#/account/login">login</a>
+	</div>
+
+
+
+
+</div>
+
+
+<style>
+	
+
+	.signupform-brand-header {
+		margin: 40px 0;
+		font-size: 2em;
+		text-align: center;
+	}
+
+	.empty-height-holder {
+		height: 1.5em;
+	}
+</style>

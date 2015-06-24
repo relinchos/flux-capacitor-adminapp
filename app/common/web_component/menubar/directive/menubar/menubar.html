@@ -1,0 +1,27 @@
+<div>
+	<div ng-repeat="menuItm in menuList">
+		<!-- ui-sref=" {{ menuItm.uisref || state.current.name }} "  -->
+		<div  class="menubar-menuItm-box-wrapper" ng-click=" menuItmClicked( $event, menuItm )" >
+			
+			<div class=" menubar-menuItm-box " ng-style="{ 'background-color': menuItm.color }" ng-class=" { dropdownOpen: menuItm.dropdownState }">
+				<div class="menubar-menuItm-caret " ng-if="menuItm.dropdown" ng-class=" { dropdownOpen: menuItm.dropdownState }">
+					<span class="fa fa-caret-right absolute-centered"></span>
+				</div>
+				<!-- {{ dropdownState }} -->
+				<div ng-class=" menuItm.icon " class=" menubar-menuItm-icon "></div>
+				<div ng-bind=" menuItm.caption " class=" menubar-menuItm-caption "></div>
+			</div>
+
+		</div>
+
+		<div class="menubar-menuItm-dropdown-box" ng-if="menuItm.dropdown" slide-toggle="menuItm.dropdownState">
+			<div ng-repeat=" menuSubItm in menuItm.dropdown">
+				<p class="mt-15" ui-sref-active="active">
+					<a ui-sref=" {{ menuSubItm.uisref || state.current.name }} " ng-bind="menuSubItm.caption"></a>
+				</p>
+			</div>
+			
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+<head>
+  <title>AdminApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less" data-log-level=0>
+
+  
+
+</head>
+<body>
+
+  <div>
+
+    <div ui-view ></div>
+    
+
+  </div>
+
+  <script>
+    window.less = { logLevel: 0 }
+  </script>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false" ></script> 
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false" data-log-level="0"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+  <script src="lb-services/lb-services.js"></script> 
+
+  <!-- 
+  <script src="bower_components/underscore/underscore.js"></script>
+-->
+
+<!-- bower:js -->
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-lodash/angular-lodash.js"></script>
+<script src="bower_components/angular-lodash-module/angular-lodash-module.js"></script>
+<script src="bower_components/angular-form-gen/dist/angular-form-gen.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+<script src="bower_components/tv4/tv4.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/objectpath/lib/ObjectPath.js"></script>
+<script src="bower_components/angular-schema-form/dist/schema-form.js"></script>
+<script src="bower_components/angular-schema-form/dist/bootstrap-decorator.js"></script>
+<script src="bower_components/pickadate/lib/picker.js"></script>
+<script src="bower_components/pickadate/lib/picker.date.js"></script>
+<script src="bower_components/pickadate/lib/picker.time.js"></script>
+<script src="bower_components/angular-schema-form-datepicker-with-options/bootstrap-datepicker.js"></script>
+<script src="bower_components/videojs/dist/video-js/video.js"></script>
+<script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
+<script src="bower_components/fui-angular/fui-checkbox.js"></script>
+<script src="bower_components/fui-angular/fui-radio.js"></script>
+<script src="bower_components/fui-angular/fui-switch.js"></script>
+<script src="bower_components/fui-angular/fui.js"></script>
+<script src="bower_components/angularjs-toaster/toaster.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/cropper/dist/cropper.js"></script>
+<script src="bower_components/ng-cropper/dist/ngCropper.all.js"></script>
+<script src="bower_components/tx-tinymce/tx-tinymce.js"></script>
+<script src="bower_components/tinymce/tinymce.min.js"></script>
+<script src="bower_components/angular-schema-form-tinymce/bootstrap-tinymce.min.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+<script src="bower_components/angular-schema-form-dynamic-select/angular-schema-form-dynamic-select.min.js"></script>
+<!-- endbower -->
+
+
+
+
+<!-- Main App JS -->
+<script src="app.js"></script>
+
+<script src="app/main/main.js"></script>
+
+<script src="app/component/account/account.js"></script>
+<script src="app/component/account/partial/login/login.js"></script>
+<script src="app/component/account/service/authservice/FcAuthService.js"></script>
+<script src="app/component/account/service/sessionservice/FcSession.js"></script>
+<script src="app/component/account/service/httpAuthInjector/httpAuthInjector.js"></script>
+<script src="app/component/account/partial/signup/signup.js"></script>
+<script src="app/component/account/partial/info/info.js"></script>
+<script src="app/component/account/partial/needEmailVerification/needEmailVerification.js"></script>
+<script src="app/component/account/partial/settings/settings.js"></script>
+
+<script src="app/component/form-edit/form-edit.js"></script>
+<script src="app/component/form-edit/partial/list/list.js"></script>
+<script src="app/component/form-edit/partial/edit/edit.js"></script>
+
+<script src="app/common/service/$localstorage/$localstorage.js"></script>
+<script src="app/common/service/multiModelProcess/multiModelProcess.js"></script>
+
+<script src="app/config/config.js"></script>
+<script src="app/config/client/navigation/FcConfigNavigation.js"></script>
+
+<script src="app/common/web_component/base_layout/baseLayout.js"></script>
+<script src="app/common/web_component/base_layout/directive/baseLayout/baseLayout.js"></script>
+<script src="app/common/web_component/navbar/navbar.js"></script>
+<script src="app/common/web_component/navbar/directive/navbar/navbar.js"></script>
+<script src="app/component/user-manager/userManager.js"></script>
+<script src="app/component/user-manager/partial/list/list.js"></script>
+<script src="app/component/user-manager/partial/details/details.js"></script>
+<script src="app/component/person/person.js"></script>
+<script src="app/component/person/partial/list/list.js"></script>
+<script src="app/component/person/partial/details/details.js"></script>
+<script src="app/common/modal/standardModal/standardModal.js"></script>
+<script src="app/component/flux-docs/flux-docs.js"></script>
+<script src="app/component/flux-docs/partial/dependencies-docs/dependencies-docs.js"></script>
+<script src="app/common/service/FcError/FcError.js"></script>
+<script src="app/common/service/multiModelProcess/multiModelProcess.js"></script>
+<script src="app/common/web_component/menubar/menubar.js"></script>
+<script src="app/common/web_component/menubar/directive/menubar/menubar.js"></script>
+<script src="app/config/client/menu/FcConfigMenu.js"></script>
+<script src="app/common/service/StateNavigator/StateNavigator.js"></script>
+<script src="app/common/web_component/statenav/statenav.js"></script>
+<script src="app/common/web_component/statenav/directive/statenav/statenav.js"></script>
+<script src="app/common/web_component/slide-toggle/slide-toggle.js"></script>
+<script src="app/common/web_component/slide-toggle/directive/slide-toggle.js"></script>
+<script src="app/component/account/directive/roleIcon/roleIcon.js"></script>
+<script src="app/common/web_component/omni-file-manager/omni-file-manager.js"></script>
+<script src="app/common/web_component/image-omni-frame/image-omni-frame.js"></script>
+<script src="app/common/web_component/image-omni-gallery/image-omni-gallery.js"></script>
+<script src="app/common/web_component/image-omni-frame/directive/image-omni-frame/image-omni-frame.js"></script>
+<script src="app/common/web_component/omni-file-manager/service/omniFileManager.js"></script>
+<script src="app/common/web_component/omni-file-manager/directive/fileDropZone/fileDropZone.js"></script>
+<script src="app/common/service/appWideSettings/appWideSettings.js"></script>
+<script src="app/component/course/course.js"></script>
+<script src="app/component/course/partial/list/list.js"></script>
+<script src="app/component/course/partial/details/details.js"></script>
+<!-- Add New Component JS Above -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<div class="standardModal-mainBox">
+
+
+
+	<!-- Title -->
+	<div class="modal-header">
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true" ng-hide="content.closeTopBtn === false">&times;</button>
+		<h4 class="modal-title" ng-if="content.title" ng-bind-html="content.title"></h4>
+	</div>
+
+
+	{{ currentSubStateName }} | {{ aspect}}
+
+	<!-- Body -->
+	<div class="filePicker-minimal-body" >
+		
+		<!-- filePreview Sub State -->
+		<div ng-if=" currentSubStateName === 'filePreview'  ">
+
+
+			<div ng-if="true" class="img-container" style="text-align: center; height: 350px;">
+				<img ng-if=" fileToPreview.fileData.url " ng-src="{{ fileToPreview.fileData.url }}" ng-cropper ng-show="{{showEvent}}" ng-hide="{{hideEvent}}" ng-options="cropperOptions" style="
+					margin: auto;
+					max-width: 100%;
+					max-height: 100%;
+					height: 100%; 
+					">
+			<!-- http://in-geniousclub.com/image_server/hm/afip/afip.jpg -->
+			</div>
+
+
+
+
+		<div class="preview-container">
+
+		</div>
+
+	</div>
+
+	<!-- ChooseFile Sub State -->
+	<div ng-if=" currentSubStateName === 'chooseFile' "> 
+		<div file-drop-zone uploader="uploader">
+			<div class="text-center ">
+					<!-- <button class="btn btn-default" ng-click=" setSubState('selectFolder') ">
+						<span class="fa fa-cloud"></span>
+						<span class="ml-10">Choose file from v-drive</span>
+					</button> -->
+					<button class="btn btn-default btn-file">
+						<span class="fa fa-desktop"></span>
+						<span class="ml-10">Pick one from computer</span>
+						<input nv-file-select uploader="uploader" type="file" multiple>
+					</button>
+				</div>
+			</div> 
+		</div>
+
+
+
+		<!-- Uploading Sub State -->
+		<div ng-if=" currentSubStateName === 'uploading'  "> 
+			<div ng-repeat="item in uploader.queue" class="row mt-20">
+				<div class="col-sm-6 col-sm-offset-3">
+					<!-- <div jsonify="item.file"></div> -->
+					<p class="mt-30 text-center">
+						<span>Uploading </span>
+						<strong><span ng-bind=" item.file.name "></span></strong>
+					</p>
+
+
+					<div class="mt-20" style="height: 40px; position: relative; width: 80%;
+					margin-left: auto; margin-right: auto;">
+					<div class="progress pull-left vertical-centered" style="left: 15px; right: 60px;">
+						<div class="progress-bar" role="progressbar"
+						ng-style="{ 'width': item.progress + '%' }" style="border-radius: 100px"></div>
+					</div>
+					<div class="text-center  vertical-centered full-width">
+
+						<span class="fa-stack fa-lg pull-right animated bounceIn" ng-if="item.isSuccess && item.completedCanBeShown ">
+							<i class="fa fa-circle fa-stack-2x text-success"></i>
+							<i class="fa fa-check fa-stack-1x fa-inverse"></i>
+						</span>
+
+						<span class="fa-stack fa-lg pull-right animated shake" ng-if="item.isError && item.completedCanBeShown ">
+							<i class="fa fa-circle fa-stack-2x text-danger"></i>
+							<i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
+						</span>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ImagePreview Sub State -->
+	<div ng-if=" currentSubStateName === 'FilePreview'	"> 
+
+		<div img-o-frame aspect-ratio="1" src="src" image-purpose-title="Avatar Image" on-upload-image="" state="">
+
+		</div>
+
+	</div>
+
+
+	<!-- SelectFolder Sub State -->
+		<!-- <div ng-if=" currentSubStateName === 'selectFolder'	"> {{ currentSubStateName }} 
+	</div> -->
+
+	<!-- SelectFile Sub State -->
+		<!-- <div ng-if=" currentSubStateName === 'selectFile'	"> {{ currentSubStateName }} 
+	</div>	 -->
+
+</div>
+
+
+
+
+
+<!-- Footer -->
+<div class=" modal-footer">
+	
+<!-- 
+	
+	<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="" ng-class="btn.customStyleClasses" >
+		<span class="fa fa-crop"></span>
+		<span class="ml-10">Crop</span>
+	</button>
+
+ -->
+
+
+
+	<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="$close(btn.closeReason);btn.action()" ng-class="btn.customStyleClasses" ></button>
+
+
+
+	<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="$close(btn.closeReason);btn.action()" ng-class="btn.customStyleClasses" ></button>
+
+	<button class="btn btn-default" ng-if="!content.footerButtons.length && content.footerButtons !== false " ng-click="$close()">OK</button>
+</div>
+
+
+
+</div>

@@ -1,0 +1,22 @@
+<div class="standardModal-mainBox">
+	
+	<div class="clearfix" ng-if="!content.title" >
+		<button type="button" class="close pull-right mr-10 mt-10" ng-click="$dismiss()" aria-hidden="true" ng-hide="content.closeTopBtn === false">&times;</button>
+	</div>
+
+	<div ng-if="content.title" class="modal-header">
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true" ng-hide="content.closeTopBtn === false">&times;</button>
+		<h4 class="modal-title" ng-bind-html="content.title"></h4>
+	</div>
+	<div class="modal-body" ng-bind-html="content.body">
+		
+	</div>
+	<div class=" modal-footer">
+
+	<!-- {{ content.footerButtons }} -->
+
+		<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="$close(btn.closeReason);btn.action()" ng-class="btn.customStyleClasses" ></button>
+
+		<button class="btn btn-default" ng-if="!content.footerButtons.length && content.footerButtons !== false " ng-click="$close()">OK</button>
+	</div>
+</div>

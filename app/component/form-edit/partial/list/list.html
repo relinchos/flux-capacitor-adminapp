@@ -1,0 +1,13 @@
+<div class="col-md-12" ng-controller="ListCtrl">
+
+<h4>List of forms</h4>
+
+<div ng-repeat="form in listOfForms">
+	
+<a ng-click=" openForm( form ) " ng-bind="form.name "></a>
+
+</div>
+
+<a ui-sref="formEdit.edit">new</a>
+
+</div>

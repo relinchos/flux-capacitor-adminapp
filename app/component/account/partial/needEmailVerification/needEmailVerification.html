@@ -1,0 +1,54 @@
+<div class="col-md-12" ng-controller="NeedemailverificationCtrl">
+
+	<h2>You need to verify your email adress before login in.</h2>
+
+	<p>If you need us to resend your verification email, please select “Resend” below. A verification message will be sent to the email address you provided in your application profile. If you do not receive the verification email, make sure to check your SPAM folder.</p>
+
+	<div>
+		<a ng-click=" showEmailForm = true " class="btn btn-default">Resend verification</a>
+	</div>
+
+	<div ng-show="showEmailForm">
+		<!-- <form class="reverifform-form" role="form" name="reverifform" novalidate ng-submit=" submit( reverifform ) ">
+			<fieldset>
+
+				<div class="form-group">				
+					<label for="username">Your email</label>
+					<input type="text" id="username" name="username" class="form-control input-lg" placeholder="e-mail address" required ng-model="toVerif.email">
+					<p class="help-block empty-height-holder"></p>
+				</div>
+
+			</fieldset>
+
+			<div class="form-group">
+				<div class="pull-right">
+					<button type="submit" class="btn btn-default">Send verification</button>
+				</div>
+			</div>
+
+		</form> -->
+
+		<form novalidate class="form" name="myForm">
+
+			<div fg-form
+			fg-form-data="formData"
+			fg-schema="formSchema">
+		</div>
+
+		<!-- set the disabled class on the submit button when the form state is invalid -->
+
+		<button type="submit"
+		class="btn btn-primary"
+		ng-class="{ disabled: myForm.$invalid }">
+		Submit
+	</button>
+
+</form>
+</div>
+{{ showEmailForm }}
+<div>
+	<a ui-sref="main" class="btn btn-default">Go to home</a>
+</div>
+
+
+</div>

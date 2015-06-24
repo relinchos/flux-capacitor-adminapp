@@ -1,0 +1,41 @@
+<div class="row mt-10 statenav-main-wrapper">
+	<div class="col-md-6">
+		<a ng-if=" getPreviousState() " class="btn btn-default pull-left  mr-20 mt-15" ng-click=" goToPreviousState() ">	
+			<span class="glyphicon glyphicon-arrow-left  "></span>
+		</a>
+
+		<h4 class="pull-left mt-20">{{ pageTitle() }}</h4>
+
+	</div>
+	<div class="col-md-6 text-right">
+		<div class="statenav-controls-wrapper">
+		<div ng-repeat="control in renderControls()" ng-if="!control.conditional || control.conditional()" class="ml-15 pull-right  mt-15">
+			
+			<!-- ng-attr-ui-sref="{{ navSubItem.uisref || state.current.name }}" -->
+			
+			<a  ng-if="control.controlType == 'btn' " class="btn"  ng-click=" control.onClick() " ng-class=" control.cssClass " ng-disabled=" control.disabled() ">
+				<span ng-bind=" control.caption"></span>
+				<span ng-class="control.icon" class="ml-10"></span> 
+			</a>
+
+
+			<div class="btn-group" ng-if="control.controlType == 'split-btn-drop' || false ">
+				<button type="button" class="btn ">Action</button>
+				<button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Separated link</a></li>
+				</ul>
+			</div>
+
+
+		</div>
+	</div>
+	</div>
+</div>

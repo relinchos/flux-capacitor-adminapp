@@ -1,0 +1,103 @@
+
+.non-selectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.mt-10 { margin-top: 10px; }
+.mr-10 { margin-right: 10px; }
+.mb-10 { margin-bottom: 10px;}
+.ml-10 { margin-left: 10px;}
+
+.mt-15 { margin-top: 15px; }
+.mr-15 { margin-right: 15px; }
+.mb-15 { margin-bottom: 15px;}
+.ml-15 { margin-left: 15px;}
+
+.mt-20 { margin-top: 20px; }
+.mr-20 { margin-right: 20px; }
+.mb-20 { margin-bottom: 20px;}
+.ml-20 { margin-left: 20px;}
+
+.mt-30 { margin-top: 30px; }
+.mr-30 { margin-right: 30px; }
+.mb-30 { margin-bottom: 30px;}
+.ml-30 { margin-left: 30px;}
+
+
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+.vertical-centered {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0%,-50%);
+	-moz-transform: translate(0%,-50%);
+	-ms-transform: translate(0%,-50%);
+	transform: translate(0%,-50%);
+}
+
+.absolute-centered { 
+    /*    width: 50%;
+        margin: auto;*/
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+// Size utils
+
+.full-height	{ height: 100% !important }
+.full-width		{ width:  100% !important }
+
+
+// Image Utils
+
+.bottom-contraster {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to bottom,rgba(0, 0, 0, 0)0,rgba(0, 0, 0, 0.65)100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+}
+
+
+
+
+// File browse button
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+

@@ -1,0 +1,8 @@
+{
+  "name": "angular-lodash-module",
+  "version": "1.1.0",
+  "main": "./angular-lodash-module.js",
+  "dependencies": {
+    "lodash": "~2.4.1"
+  }
+}

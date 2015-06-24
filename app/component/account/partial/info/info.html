@@ -1,0 +1,13 @@
+<div class="col-md-12" ng-controller="InfoCtrl">
+
+	<h1>INFO PAGE</h1>
+
+	<div>
+		<p ng-repeat="paragraph in message" ng-bind="paragraph"></p>
+	</div>
+
+	<div>
+		<a ng-repeat="btn in action" ng-bind="btn.caption" ng-click="btn.click()" class="btn btn-default"></a>
+	</div>
+
+</div>

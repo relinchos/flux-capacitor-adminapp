@@ -1,0 +1,42 @@
+<div class="col-md-12" ng-controller="UserListCtrl">
+	
+
+	<table class="list-table">
+		<thead>
+			<tr>
+				<th class=" text-left">id</th>
+				
+				<!-- <th>birth date</th> -->
+				
+				<th>email</th>
+				<th class="text-center">Roles</th>
+
+				
+
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in userList">
+				<td class="text-left"> 	
+					{{user.id}} 
+				</td>
+				
+				<!-- <td>{{user.birthDate}}</td> -->
+				
+				<td>{{ user.email }}</td>
+				<td class="text-center"> 
+					<div role-icon="user.roles"></div>
+				</td>
+
+				
+
+				<td class="list-table-col-action text-center">
+				<a class="btn btn-xs btn-default" ui-sref="userManager.userDetails({ userId: user.id })" >Details</a>
+				<a class="btn btn-xs btn-danger" ng-click="user_delete( user.id )" >Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

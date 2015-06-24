@@ -1,0 +1,48 @@
+{
+  "name": "fui-angular",
+  "version": "0.1.3",
+  "authors": [
+    "Joan Vega <joan@inte.es>"
+  ],
+  "description": "Native AngularJS directives for Flat UI Pro (by Designmodo). Pure AngularJS directives with no jQuery.",
+  "homepage": "https://github.com/sitamet/fui-angular",
+  "main": [
+    "fui-checkbox.js",
+    "fui-radio.js",
+    "fui-switch.js",
+    "fui.js"
+  ],
+  "keywords": [
+    "fui",
+    "flatui",
+    "flat",
+    "ui",
+    "pro",
+    "angularjs",
+    "designmodo",
+    "directives"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "demo",
+    "node_modules",
+    "bower_components",
+    "spec",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0",
+    "flat-ui": ">=2.2.0"
+  },
+  "_release": "0.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.3",
+    "commit": "388554a13911b89bcc17c0609edd2a359e95da3c"
+  },
+  "_source": "git://github.com/sitamet/fui-angular.git",
+  "_target": "~0.1.3",
+  "_originalSource": "fui-angular",
+  "_direct": true
+}

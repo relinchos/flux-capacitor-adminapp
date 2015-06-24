@@ -1,0 +1,120 @@
+@base: lighten(#999, 20%);
+
+
+
+
+
+// twitter bootstrap:
+@import "bower_components/bootstrap/less/bootstrap.less";
+// @import "bower_components/bootstrap/less/theme.less";
+
+@import (less) "bower_components/pickadate/lib/themes/default.css";
+@import (less) "bower_components/pickadate/lib/themes/default.date.css";
+
+@import (less) "bower_components/angularjs-toaster/toaster.css";
+
+@import (less) "bower_components/ng-cropper/dist/ngCropper.all.css";
+
+
+
+// angular-form-gen-styles:
+//@import "bower_components/angular-form-gen/dist/angular-form-gen.css";
+
+
+
+// font awesome:
+@import "bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+
+// Glyphicons
+//@import: "bower_components/bootstrap/less/glyphicons.less";
+
+
+@import (less) "app/common/style/animate.css";
+
+
+@import "app/common/style/flat-ui-theme/less/flat-ui.less";
+
+
+/* Component LESS */
+
+@import "app/component/account/account.less";
+@import "app/component/form-edit/form-edit.less";
+
+@import "app/main/main.less";
+@import "app/config/config.less";
+
+
+@import "app/common/web_component/base_layout/baseLayout.less";
+@import "app/common/web_component/navbar/navbar.less";
+@import "app/component/user-manager/userManager.less";
+@import "app/component/person/person.less";
+@import "app/common/modal/standardModal/standardModal.less";
+@import "app/component/flux-docs/flux-docs.less";
+@import "app/common/web_component/menubar/menubar.less";
+@import "app/common/web_component/statenav/statenav.less";
+@import "app/common/web_component/slide-toggle/slide-toggle.less";
+@import "app/common/web_component/omni-file-manager/omni-file-manager.less";
+@import "app/common/web_component/image-omni-frame/image-omni-frame.less";
+@import "app/common/web_component/image-omni-gallery/image-omni-gallery.less";
+
+@import "app/component/course/course.less";
+/* Add Component LESS Above */
+
+
+
+// common
+@import "app/common/style/global.less";
+@import "app/common/style/utils.less";
+@import "app/common/style/list-table.less";
+@import "app/common/style/bootstrap-override.less";
+@import "app/common/style/toaster-override.less";
+@import "app/common/style/FCaa.less";
+
+
+
+/* Fixed Navbar */
+// body { padding-top: 50px; }
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+/**
+Bootstrap 3 - Disabled dropdown links
+
+Bootstrap 3 has built-in visual support for disabled dropdown menu items, however these are simply 
+visual changes and don't actually impact the interactivity of the element itself.
+
+Once this is added to your styles, you can easily disable any dropdown item by applying a [disabled] attribute 
+to the <a/> element itself, and adding the usual .disabled class to the parent <li>.
+
+More information here: http://blog.craigsworks.com/bootstrap-3-disabled-dropdown-links/
+**/
+ 
+/*
+Mimic cursor style from native .dropdown-menu > .disabled > a{} styles,
+since `pointer-events: none` kills the cursor state, too. 
+*/
+.dropdown-menu > .disabled{
+ cursor: not-allowed; 
+}
+ 
+/* The real magic ;) */
+.dropdown-menu > .disabled > a{
+ pointer-events: none;
+}
+
+
+/* Personal preference for BS modal.  The LESS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}

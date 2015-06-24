@@ -1,0 +1,42 @@
+.list-table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 30px;
+}
+
+.list-table thead{
+	border-bottom: 1px solid
+}
+
+.list-table th {
+	text-transform: capitalize;
+} 
+
+.list-table td, .list-table th {
+	padding: 10px;
+}
+
+.list-table-col-id {
+	 width: 85px;
+	 max-width: 85px;
+	word-wrap: normal;
+	overflow: hidden;
+	// text-overflow: ellipsis;
+}
+td.list-table-col-id > * {
+	cursor: pointer;
+} 
+
+.list-table-col-action {
+	opacity: 0.2;
+}
+
+// .list-table-col-action:hover {
+// 	opacity: 1;
+// }
+.list-table tbody tr:hover {
+	background-color: #ecf0f1;
+}
+.list-table tr:hover > .list-table-col-action {
+	opacity: 1;
+}

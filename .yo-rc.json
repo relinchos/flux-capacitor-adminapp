@@ -1,0 +1,89 @@
+{
+  "generator-cg-angular": {
+    "uirouter": true,
+    "partialDirectory": "partial/",
+    "modalDirectory": "partial/",
+    "directiveDirectory": "directive/",
+    "filterDirectory": "filter/",
+    "serviceDirectory": "service/",
+    "inject": {
+      "js": {
+        "file": "index.html",
+        "marker": "<!-- Add New Component JS Above -->",
+        "template": "<script src=\"<%= filename %>\"></script>"
+      },
+      "less": {
+        "relativeToModule": true,
+        "file": "<%= module %>.less",
+        "marker": "/* Add Component LESS Above */",
+        "template": "@import \"<%= filename %>\";"
+      }
+    },
+    "modules": [
+      {
+        "name": "account",
+        "file": "app/component/account/account.js"
+      },
+      {
+        "name": "main",
+        "file": "main/main.js"
+      },
+      {
+        "name": "formEdit",
+        "file": "form-edit/form-edit.js"
+      },
+      {
+        "name": "config",
+        "file": "app/config/config.js"
+      },
+      {
+        "name": "baseLayout",
+        "file": "app/common/web_component/base_layout/baseLayout.js"
+      },
+      {
+        "name": "navbar",
+        "file": "app/common/web_component/navbar/navbar.js"
+      },
+      {
+        "name": "userManager",
+        "file": "app/component/user-manager/userManager.js"
+      },
+      {
+        "name": "person",
+        "file": "app/component/person/person.js"
+      },
+      {
+        "name": "fluxDocs",
+        "file": "app/component/flux-docs/flux-docs.js"
+      },
+      {
+        "name": "menubar",
+        "file": "app/common/web_component/menubar/menubar.js"
+      },
+      {
+        "name": "statenav",
+        "file": "app/common/web_component/statenav/statenav.js"
+      },
+      {
+        "name": "slideToggle",
+        "file": "app/common/web_component/slide-toggle/slide-toggle.js"
+      },
+      {
+        "name": "omniFileManager",
+        "file": "app/common/web_component/omni-file-manager/omni-file-manager.js"
+      },
+      {
+        "name": "imageOmniFrame",
+        "file": "app/common/web_component/image-omni-frame/image-omni-frame.js"
+      },
+      {
+        "name": "imageOmniGallery",
+        "file": "app/common/web_component/image-omni-gallery/image-omni-gallery.js"
+      },
+      {
+        "name": "course",
+        "file": "app/component/course/course.js"
+      }
+    ]
+  }
+}

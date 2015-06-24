@@ -1,0 +1,50 @@
+<div ui-view>
+	<div class="col-md-12" >
+
+		<table class="list-table ">
+			<thead>
+				<tr>
+					<th class="list-table-col-id text-center">id</th>
+					<th>Title</th>
+					<!-- <th>birth date</th> -->
+					
+					<!-- <th>e-mail</th>
+					<th class="text-center">Roles</th>
+					<th class="text-center">User</th> -->
+
+					<th class="text-center">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="course in courseList">
+					<td class="list-table-col-id text-center">
+						<span popover-trigger="click " popover-popup-delay="250" popover-placement="top"  popover="{{course.id }} ">…{{course.id | limitTo: -4 }} </span>
+					</td>
+					<th>{{ course.title }}</th>
+					<!-- <td>{{course.birthDate}}</td> -->
+					
+				<!-- 	<td>{{ course.email }}</td>
+
+					<td class="text-center">
+						<div role-icon="course.roles"></div>
+					</td>
+					
+
+					<td class="text-center">
+						<span class="fa fa-user" ng-if="course.userId" style="color: #54e595"></span>
+						<span class="fa fa-minus" ng-if="!course.userId"></span>	
+					</td> -->
+
+					<td class="list-table-col-action text-center">
+						<a class="btn btn-xs btn-default" ui-sref="course.details({ courseId: course.id })" >Details</a>
+						<a class="btn btn-xs btn-danger" ng-click="course_delete( course.id )" >Delete</a>
+						<a class="btn btn-xs fa fa-eye" ng-click=" inspectJSON( course )" ng-if="FcSession.userHasRole('admin')"> JSON</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+	</div>
+</div>

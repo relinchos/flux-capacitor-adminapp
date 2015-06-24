@@ -1,0 +1,49 @@
+<div class="image-omni-frame-utils-full-absolute">
+
+	
+	<!-- Image itself -->
+	<div class="image-omni-frame-imgBox image-omni-frame-utils-full-absolute FCaa-ng-if " ng-style="{ 'background-image': 'url({{ state.imgSrc }})'}" ng-if="!state.isLoading && state.imgIsReady && state.srcExist ">
+	</div>
+
+	<!-- Image doesn't exist -->
+	<div class="image-omni-frame-imgBox image-omni-frame-utils-full-absolute FCaa-ng-if "  ng-if="!state.isLoading && state.srcError && state.imgSrc ">
+		<div class="absolute-centered image-omni-frame-errorColor">
+			<span class="fa-stack fa-2x">
+				<i class="fa fa-file-o fa-stack-2x "></i>
+				<i class="fa fa-frown-o fa-stack-1x" style="padding-top: 8px"></i>
+			</span>
+
+		</div>
+	</div>
+
+	
+	<!-- Loading Spinner -->
+	<div class="image-omni-frame-utils-full-absolute image-omni-frame-spinnerBox FCaa-ng-if " ng-if="state.isLoading">
+		<div class="absolute-centered">
+			<div class="fa fa-circle-o-notch fa-2x fa-spin"></div>
+		</div>
+	</div>
+
+	<!-- http://in-geniousclub.com/image_server/hm/content_boxes/como_enseñamos.jpg -->
+	
+
+	<div class="image-omni-frame-utils-full-absolute ">
+		
+	</div>
+
+	<div class="image-omni-frame-buttonsWrapper" ng-class=" { 'image-omni-frame-forceShow': !state.isLoading && state.srcError }">
+		<div class="bottom-contraster full-height " ng-if="!state.isLoading && state.imgIsReady "></div>
+		<div class="absolute-centered">
+			<div class="btn btn-default btn-xs" ng-click="doChangeImage()">
+				<span class="fa fa-file-image-o"></span> 
+				<span class="ml-10 mr-10" ng-bind=" state.imgSrc ? 'Change Image' : 'Upload Image' "></span>
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+
+
+</div>

@@ -1,0 +1,84 @@
+<div class="col-sm-offset-4 col-sm-4" ng-controller="LoginCtrl">
+
+	<div class="loginPage-alert alert alert-danger" role="alert" ng-if="loginFailed">
+		<strong>Oh snap!</strong> Change a few things up and try submitting again.
+	</div>
+
+
+	<div class="loginform-brand-header">
+		flux-capacitor
+		<!-- <img src="http://in-geniousclub.com/image_server/hm/brand/in-genious_logo_ml.png" width="250" alt=""> -->
+		<span class="hidden-sm"> | </span> 
+		Login
+	</div>
+
+	<form class="loginform-form" role="form" name="loginform" novalidate ng-submit=" submit( loginform ) ">
+
+		<fieldset>
+
+			<div class="form-group">				
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" class="form-control input-lg" placeholder="e-mail address" required ng-model="credentials.email">
+				<p class="help-block empty-height-holder"></p>
+			</div>
+
+			<div class="form-group">				
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" class="form-control input-lg" required ng-model="credentials.password">
+				<p class="help-block empty-height-holder"></p>
+			</div>
+
+			<div class="form-group">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" value=""  ng-model="rememberMe" />
+						Remember me
+					</label>
+
+				<!-- 	<fui-checkbox ng-model="rememberMe"  style="display: inline-block">
+					<span style="margin-left:10px;"> Remember me</span>
+				</fui-checkbox> -->
+			</div>
+		</div>
+
+		<hr>
+
+
+
+
+		<div class="form-group">
+			<div class="pull-right">
+				<button type="submit" class="btn btn-default">
+					<span class="fa fa-sign-in"></span>
+					Log in
+				</button>
+			</div>
+		</div>
+
+	</fieldset>
+
+</form>
+
+<div>
+	<!-- <a href="#/account/signup">Sign up</a> -->
+</div>
+
+
+
+
+</div>
+
+
+<style>
+	
+
+	.loginform-brand-header {
+		margin: 40px 0;
+		font-size: 2em;
+		text-align: center;
+	}
+
+	.empty-height-holder {
+		height: 1.5em;
+	}
+</style>
