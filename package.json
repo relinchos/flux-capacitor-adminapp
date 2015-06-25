@@ -28,5 +28,9 @@
     "karma-mocha-reporter": "~0.2.5",
     "karma-phantomjs-launcher": "~0.1.4",
     "load-grunt-tasks": "~0.2"
+  },
+  "dependencies": {
+    "express": "^4.13.0",
+    "gzippo": "^0.2.0"
   }
 }
