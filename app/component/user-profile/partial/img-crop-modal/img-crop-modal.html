@@ -1,0 +1,51 @@
+
+<div class="standardModal-mainBox">
+
+
+
+	<!-- Title -->
+	<div class="modal-header">
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true" ng-hide="content.closeTopBtn === false">&times;</button>
+		<h4 class="modal-title" ng-if="content.title" ng-bind-html="content.title"></h4>
+	</div>
+
+
+	{{ currentSubStateName }} | {{ aspect}}
+
+	<!-- Body -->
+	
+	<div class="cropArea">
+		<img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+	</div>
+
+
+
+</div>
+
+
+<!-- Footer -->
+<div class=" modal-footer">
+	
+<!-- 
+	
+	<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="" ng-class="btn.customStyleClasses" >
+		<span class="fa fa-crop"></span>
+		<span class="ml-10">Crop</span>
+	</button>
+
+
+
+
+
+<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="$close(btn.closeReason);btn.action()" ng-class="btn.customStyleClasses" ></button>
+
+
+
+<button class="btn btn-default" ng-repeat="btn in content.footerButtons" ng-bind-html="btn.caption" ng-click="$close(btn.closeReason);btn.action()" ng-class="btn.customStyleClasses" ></button>
+-->
+<button class="btn btn-default" ng-if="!content.footerButtons.length && content.footerButtons !== false " ng-click="$close( myCroppedImage )">OK</button>
+</div>
+
+
+
+</div>

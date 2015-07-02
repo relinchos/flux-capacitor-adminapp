@@ -20,7 +20,7 @@ angular.module('account')
 				var user = res.user;
 				var idsession = res.id;
 				FcSession.create( idsession, user, rememberMe, function(){ 
-					$state.go('main');
+					$state.go('landing');
 				} );
 
 				if (_.isFunction( sucCb )){
@@ -79,14 +79,16 @@ angular.module('account')
 	};
 
 
-	authService.signup = function ( credentials ) { return;
+	authService.signup = function (  rememberMe, credentials, sucCb, failCb ) { 
 		User.create(
 			credentials, 
 			function(res){
 				console.log('signup suc!', res );
+				authService.login( rememberMe, credentials, sucCb, failCb );
 			},
 			function(res){
 				console.error('signup err!', res );
+				if(typeof failCb === 'function'){ failCb( res ) };
 			});
 	};
 

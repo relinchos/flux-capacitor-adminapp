@@ -1,12 +1,13 @@
-angular.module('adminApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'main', 'account', 'lbServices', 'fg', 'formEdit', 'lodash', 'config', 'baseLayout', 'navbar', 'userManager', 'person', 'schemaForm', 'schemaForm-tinymce','fluxDocs', 'fui', 'toaster', 'menubar', 'statenav', 'slideToggle', 'omniFileManager', 'imageOmniFrame', 'imageOmniGallery', 'course']);
+angular.module('adminApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'main', 'account', 'lbServices', 'fg', 'formEdit', 'lodash', 'config', 'baseLayout', 'navbar', 'userManager', 'person', 'schemaForm', 'schemaForm-tinymce','fluxDocs', 'fui', 'toaster', 'menubar', 'statenav', 'slideToggle', 'omniFileManager', 'imageOmniFrame', 'imageOmniGallery', 'course', 'ranking', 'userProfile',  'landing',  'ngImgCrop']);
 
 angular.module('adminApp').config(function($stateProvider, $urlRouterProvider, $modalProvider, $provide ) {
 
-
+	
     $stateProvider.state('main', {
-        url: '/',
+        //url: '/',
         template: '<div base-layout></div>'
     });
+	
 
 
     /* Add New States Above */

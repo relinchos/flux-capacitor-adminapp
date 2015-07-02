@@ -89,7 +89,7 @@ angular.module('account')
 
     // Going to login:
 
-    if ( _.contains(['account.login'], toState.name )){ 
+    if ( _.contains(['account.login','account.signup'], toState.name )){ 
       toState.data.previousState = {
         name: fromState.name,
         params: fromParams

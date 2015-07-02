@@ -2,8 +2,8 @@ angular.module('account').controller('LoginCtrl',function($scope,  AUTHENTICATIO
 
 
 	$scope.credentials = {
-		email: 'demoadmin@demohost.demo',
-		password: 'demopass'
+		email: '',
+		password: ''
 	};
 	$scope.rememberMe = AUTHENTICATION.defaultRememberMe;
 
@@ -12,6 +12,8 @@ angular.module('account').controller('LoginCtrl',function($scope,  AUTHENTICATIO
 
 
 	$scope.submit = function( formData ){
+
+		$scope.loginFailed = false;
 
 		//console.log('form submmited :)', $scope.credentials, $scope.rememberMe );
 

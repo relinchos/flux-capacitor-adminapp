@@ -81,8 +81,16 @@
         "file": "app/common/web_component/image-omni-gallery/image-omni-gallery.js"
       },
       {
-        "name": "course",
-        "file": "app/component/course/course.js"
+        "name": "ranking",
+        "file": "app/component/ranking/ranking.js"
+      },
+      {
+        "name": "userProfile",
+        "file": "app/component/user-profile/userProfile.js"
+      },
+      {
+        "name": "landing",
+        "file": "app/component/landing/landing.js"
       }
     ]
   }

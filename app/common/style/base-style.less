@@ -1,0 +1,85 @@
+
+
+@baseAccent: #004C6C;
+@lightAccent: #0D8DA9;
+
+@baseWhite: #FFF;
+
+@backgroundBase: #9ACFDA;
+
+
+@import url(http://fonts.googleapis.com/css?family=Righteous);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+
+body { 
+	background-color: @backgroundBase; 
+	
+	padding-top: 70px; 
+	color: @baseWhite;
+
+	font-size: 1.4em;
+
+
+	background-position: center center;
+
+	//background-image: url('/app/asset/img/itca_landing_fondo.png');
+	background-size: cover;
+	 background-repeat: no-repeat;
+	  background-attachment: fixed;
+
+
+}
+
+.spinner-box {
+	margin-top: 200px;
+	width: 100%;
+	text-align: center;
+	font-size: 3em;
+}
+
+
+
+.font-righteous { font-family: 'Righteous', cursive; }
+.font-pt-sans { font-family: 'PT Sans', sans-serif; }
+
+h1 {
+	font-family: 'Righteous', cursive;
+	color:    @baseAccent;
+	font-size: 2.1em;
+	text-transform: uppercase;
+}
+
+input {
+	border: 1px solid @baseAccent;
+
+	color: @lightAccent;
+
+	font-size: 1em;
+
+	margin: 10px 0px;
+
+	padding: 8px;
+
+	background-color: transparent;
+}
+
+input:disabled {
+	border-color: transparent;
+	
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @baseAccent;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    @baseAccent;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    @baseAccent;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    @baseAccent;
+}

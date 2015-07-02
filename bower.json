@@ -34,7 +34,8 @@
     "cropper": "~0.9.1",
     "ng-cropper": "~0.2.2",
     "angular-schema-form-tinymce": "~0.1.0",
-    "angular-schema-form-dynamic-select": "~0.10.0"
+    "angular-schema-form-dynamic-select": "~0.10.0",
+    "ng-img-crop": "~0.3.2"
   },
   "resolutions": {
     "bootstrap": "~3.3.1",

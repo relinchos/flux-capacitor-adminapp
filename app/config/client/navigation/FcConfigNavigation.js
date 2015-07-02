@@ -1,17 +1,20 @@
 angular.module('config').factory('FcConfigNavigation',function() {
 
+
+
+
 	var FcConfigNavigation = {
 
 		navbar: 
 		[
 		{
-			caption: 'Home',
-			uisref: 'main'
+			caption: 'Plataforma de juegos',
+			uisref: 'landing'
 		},
-		// {
-		// 	caption: 'Person',
-		// 	uisref: 'person'
-		// },
+		{
+			caption: 'Ranking',
+			uisref: 'ranking'
+		},
 		{
 			caption: 'User',
 			roles: ['admin'],
@@ -53,6 +56,12 @@ angular.module('config').factory('FcConfigNavigation',function() {
 				href: '/explorer'
 			}
 			]
+		}
+		],
+		accountOptions: [
+		{
+			caption: 'Perfil de usuario',
+			uisref: 'profile'
 		}
 		]
 
