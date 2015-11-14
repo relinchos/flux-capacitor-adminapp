@@ -15,6 +15,7 @@ angular.module('navbar').directive('navbar', function( $state, FcAuthService, Fc
 
 			var navigationConfig = FcConfigNavigation;
 			scope.navItems = navigationConfig.navbar;
+			scope.accountOptions = navigationConfig.accountOptions || [];
 
 
 			scope.currentStateName = scope.state ? scope.state.current.name : '';

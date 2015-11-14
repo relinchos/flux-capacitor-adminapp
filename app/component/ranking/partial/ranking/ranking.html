@@ -1,0 +1,96 @@
+<div class="full-absolute" ng-controller="RankingCtrl">
+
+
+	<div class="spinner-box" ng-if="loadingInfo">
+		<i class="fa fa-cog fa-spin"></i>
+	</div>
+
+	<div class="pills-column" ng-if=" !loadingInfo">
+		
+		<div class="ranking-user-wrapper" ng-repeat="user in users">
+			<div class="pill-wrapper"  ng-click="userSelected( event, user )" ng-class="{ 'ranking-selected-user-pill': selectedUser.id === user.id }">
+
+				<div class="empty-avatar pill-head" ng-if="!user.avatar"></div>
+
+				<div class="pill-head" ng-style="{'background-image':'url(' + user.avatar +  ')' }" ng-if="user.avatar"></div>
+
+				<div class="pill-text-wrapper">
+					<div class="pill-text vertical-centered ellipsis" ng-bind="user.fullName">
+
+					</div>	
+				</div>	
+
+
+			</div>
+			<div class="ranking-index vertical-centered ellipsis" ng-bind="{{ $index + 1 }}"></div>
+		</div>
+		
+
+	</div>
+
+	<div class="body-column">
+
+
+		
+
+
+
+
+
+		<div ng-if="!selectedUser && !loadingInfo">
+
+			<div class="fa fa-hand-o-left ranking-left-hand"></div>
+
+			<div class="ranking-call-to-select">
+				Haz click en un competidor para ver más detalles
+			</div>
+
+		</div>
+
+
+		<div ng-if="selectedUser && !loadingInfo">
+			<div class="empty-avatar ranking-avatar" ng-if="!selectedUser.avatar"></div>
+
+			<div class="ranking-avatar" ng-style="{'background-image':'url(' + selectedUser.avatar +  ')' }" ng-if="selectedUser.avatar"></div>
+
+			<div class=" ranking-sub-avatar-username" ng-bind="selectedUser.fullName"></div>
+
+			<div class="ranking-data-box">
+				<table class="ranking-marks-table">
+					<tr ng-repeat="dataLine in selectedUser.marks">
+						<td ng-bind="dataLine.competencia"></td>
+						<td><span class="fa fa-chevron-right"></span></td>
+						<td ng-bind="dataLine.mark"></td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+</div>
+
+
+
+	<!--
+	<div class="ranking-action-box">
+		<div class="btn btn-lg btn-primary">
+			DESAFIAR!
+		</div>
+	</div>
+-->
+
+<!--
+			<table class="ranking-data-table">
+				<tr ng-repeat="dataLine in rankingData">
+					<td ng-bind="dataLine.name"></td>
+					<td><span class="fa fa-chevron-right"></fa></td>
+					<td ng-bind="dataLine.value"></td>
+				</tr>
+
+			</table>
+		-->

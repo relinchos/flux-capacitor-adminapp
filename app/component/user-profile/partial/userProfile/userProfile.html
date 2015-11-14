@@ -1,0 +1,116 @@
+<div class="full-absolute">
+
+	<div class="pills-column">
+		
+		<div class="ranking-avatar profile-avatar" ng-style="{'background-image':'url(' + personData.avatar +  ')' }"
+		>
+	</div>
+
+
+
+	<button class="btn btn-primary btn-file">
+		<!-- <span class="fa fa-desktop"></span> -->
+		<span class="ml-10">Cambiar imagen</span>
+		<input type="file" id="CropFileInput">
+	</button>
+
+
+</div>
+
+<div class="body-column profile-body-column">
+
+
+	<div class="profile-section">
+		<div class="profile-title-box" ng-click=" profileItmClicked( $event, 'userProfile' ) " >
+			<span class="fa fa-chevron-right" ng-class=" { dropdownOpen: dropdownActive.userProfile }"></span>
+			<div class="profile-title-text">PERFIL DE USUARIO</div>
+		</div>
+
+		<div class="profile-section-body" slide-toggle=" dropdownActive.userProfile ">
+
+			<form class="form-horizontal" role="form">
+
+				<div class="form-group">
+					<label class="control-label col-sm-2 mt-10" for="dni">Dni</label>
+					<div class="col-sm-10">
+						<input type="text" name="dni" ng-model="personData.dni" disabled>
+					</div>
+				</div>
+
+				<div class="form-group">
+						<label class="control-label col-sm-2 mt-10" for="email">Email</label>
+						<div class="col-sm-10">
+							<input type="email" name="email" ng-model="session.user.email" disabled>
+						</div>
+					</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2 mt-10" for="firstname">Nombres</label>
+					<div class="col-sm-10">
+						<input type="text" name="firstname" ng-model="personData.firstName">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2 mt-10" for="lastname">Apellidos</label>
+					<div class="col-sm-10">
+						<input type="text" name="lastname" ng-model="personData.lastName">
+					</div>
+				</div>
+
+					<!--
+					<div class="form-group">
+						<label class="control-label col-sm-2 mt-10" for="email">Email</label>
+						<div class="col-sm-10">
+							<input type="email" name="email" >
+						</div>
+					</div>
+				-->
+
+			</form>
+		</div>
+	</div>
+
+
+	<div class="profile-section" ng-if="false">
+		<div class="profile-title-box" ng-click=" profileItmClicked( $event, 'passChange' ) " >
+			<span class="fa fa-chevron-right"  ng-class=" { dropdownOpen: dropdownActive.passChange }"></span>
+			<div class="profile-title-text">CAMBIO DE CONTRASEÑA</div>
+		</div>
+
+		<div class="profile-section-body" slide-toggle=" dropdownActive.passChange ">
+			<div class="btn btn-primary" ng-click=" resetPassword() ">Enviar e-mail de reseteo de contraseña</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="profile-section" ng-if="false">
+		<div class="profile-title-box" ng-click=" profileItmClicked( $event, 'suscriptions' ) " >
+			<span class="fa fa-chevron-right" ng-class=" { dropdownOpen: dropdownActive.suscriptions }"></span>
+			<div class="profile-title-text">SUSCRIPCIONES</div>
+		</div>
+
+		<div class="profile-section-body" slide-toggle=" dropdownActive.suscriptions ">
+			<h4>Recibir notificaciones vía e-mail cuando...</h4>
+			<form>
+				<input type="checkbox" name="vehicle" value="Bike"> Alguien me desafíe
+				<br>
+				<input type="checkbox" name="vehicle" value="Car" checked="checked"> Se publiquen nuevas trivias
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div>
+		<div class="btn btn-primary" ng-disabled="dataNotChanged()" ng-click=" saveChanges() ">Guardar cambios</div>
+	</div>
+
+</div>
+
+</div>

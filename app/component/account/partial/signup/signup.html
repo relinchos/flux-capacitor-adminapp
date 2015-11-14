@@ -1,23 +1,56 @@
-<div class="col-md-offset-4 col-md-4"  ng-controller="SignupCtrl">
+<div class="col-sm-12"  ng-controller="SignupCtrl">
 
 
+	<div class="row">
+		<div class="col-md-6">
 
-	<div class="signupform-brand-header">sign up</div>
+			<div class="account-form-brand-header logo_itca_competencia_2"></div>
+			
+		</div>
 
-	<form action="" class="signupform-form" role="form" name="signupform" novalidate ng-submit=" submit( signupform ) ">
+		<div class="col-md-4 mt-10">
 
-		<fieldset>
 
-			<div class="form-group">				
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username" class="form-control input-lg" placeholder="e-mail address" required ng-model="credentials.email">
-				<p class="help-block empty-height-holder"></p>
+			<div class="loginPage-alert alert alert-danger" role="alert" ng-if="signupFail">
+				<strong>Error en el registro </strong> 
+				<span ng-bind="failMsg"></span>
 			</div>
 
-			<div class="form-group">				
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password" class="form-control input-lg" required ng-model="credentials.password">
-				<p class="help-block empty-height-holder"></p>
+
+			<form  class="signupform-form" role="form" name="signupform" novalidate ng-submit=" submit( signupform ) ">
+
+				<fieldset>
+
+					<div class="form-group">				
+						<label for="dni">Dni</label>
+						<input type="text" id="dni" name="dni" class="form-control input-lg" placeholder="" required ng-model="credentials.dni">
+						<p class="help-block empty-height-holder"></p>
+					</div>
+
+					<div class="form-group">				
+						<label for="username">Username</label>
+						<input type="text" id="username" name="username" class="form-control input-lg" placeholder="e-mail address" required ng-model="credentials.email">
+						<p class="help-block empty-height-holder"></p>
+					</div>
+
+					<div class="form-group">				
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" class="form-control input-lg" required ng-model="credentials.password">
+						<p class="help-block empty-height-holder"></p>
+					</div>
+
+
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value=""  ng-model="rememberMe" />
+								Recordarme
+							</label>
+
+				<!-- 	<fui-checkbox ng-model="rememberMe"  style="display: inline-block">
+						<span style="margin-left:10px;"> Remember me</span>
+					</fui-checkbox> -->
+				</div>
 			</div>
 
 
@@ -25,17 +58,25 @@
 
 			<div class="form-group">
 				<div class="pull-right">
-					<button type="submit" class="btn btn-default"> Sign up </button>
+					<button type="submit" class="btn btn-primary"> Finalizar registro </button>
 				</div>
+
+				<a href="#/account/login" class="pull-left">Ya estoy registrado</a>
+
 			</div>
 
 		</fieldset>
 
 	</form>
 
-	<div>
-		<a href="#/account/login">login</a>
-	</div>
+
+
+</div>
+</div>
+
+
+
+
 
 
 
@@ -43,16 +84,3 @@
 </div>
 
 
-<style>
-	
-
-	.signupform-brand-header {
-		margin: 40px 0;
-		font-size: 2em;
-		text-align: center;
-	}
-
-	.empty-height-holder {
-		height: 1.5em;
-	}
-</style>

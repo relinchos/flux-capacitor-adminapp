@@ -2,14 +2,28 @@ angular.module('account').controller('SignupCtrl',function($scope, FcAuthService
 
 
 	$scope.credentials = {};
+	$scope.signupFail = false;
+	$scope.failMsg = '';
 
-	$scope.submit = function( formData){
+	$scope.submit = function( formData ){ 
 
-		//console.log('form submmited :)', $scope.credentials, $scope.rememberMe );
+		$scope.signupFail = false;
+		$scope.failMsg = '';
 
-AuthService.signup( $scope.credentials );
+		var credentials = $scope.credentials;
+
+		FcAuthService.signup( 
+			$scope.rememberMe,
+			credentials,
+			null,
+			function( res ) {
+
+				$scope.signupFail = true;
+				$scope.failMsg= res.data.error.message;
+
+			});
 
 
-};
+	};
 
 });
