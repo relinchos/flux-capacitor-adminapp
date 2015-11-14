@@ -1,4 +1,4 @@
-angular.module('adminApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'main', 'account', 'lbServices', 'fg', 'formEdit', 'lodash', 'config', 'baseLayout', 'navbar', 'userManager', 'person', 'schemaForm', 'schemaForm-tinymce','fluxDocs', 'fui', 'toaster', 'menubar', 'statenav', 'slideToggle', 'omniFileManager', 'imageOmniFrame', 'imageOmniGallery', 'course', 'ranking', 'userProfile',  'landing',  'ngImgCrop']);
+angular.module('adminApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'main', 'account', 'lbServices', 'fg', 'formEdit', 'lodash', 'config', 'baseLayout', 'navbar', 'userManager', 'person', 'schemaForm', 'schemaForm-tinymce','fluxDocs', 'fui', 'toaster', 'menubar', 'statenav', 'slideToggle', 'omniFileManager', 'imageOmniFrame', 'imageOmniGallery', 'course', 'userProfile',   'ngImgCrop']);
 
 angular.module('adminApp').config(function($stateProvider, $urlRouterProvider, $modalProvider, $provide ) {
 

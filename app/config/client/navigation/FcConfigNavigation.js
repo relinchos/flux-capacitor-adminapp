@@ -7,14 +7,7 @@ angular.module('config').factory('FcConfigNavigation',function() {
 
 		navbar: 
 		[
-		{
-			caption: 'Plataforma de juegos',
-			uisref: 'landing'
-		},
-		{
-			caption: 'Ranking',
-			uisref: 'ranking'
-		},
+		
 		{
 			caption: 'User',
 			roles: ['admin'],
