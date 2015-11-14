@@ -1,10 +1,10 @@
 
 .non-selectable {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .mt-10 { margin-top: 10px; }
@@ -30,20 +30,20 @@
 
 
 .ellipsis {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
 
 .vertical-centered {
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translate(0%,-50%);
-	-moz-transform: translate(0%,-50%);
-	-ms-transform: translate(0%,-50%);
-	transform: translate(0%,-50%);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%,-50%);
+  -moz-transform: translate(0%,-50%);
+  -ms-transform: translate(0%,-50%);
+  transform: translate(0%,-50%);
 }
 
 .absolute-centered { 
@@ -58,10 +58,26 @@
 }
 
 
+// Position & Size Packs
+
+.full-absolute { 
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.full-relative { 
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 // Size utils
 
-.full-height	{ height: 100% !important }
-.full-width		{ width:  100% !important }
+.full-height  { height: 100% !important }
+.full-width   { width:  100% !important }
 
 
 // Image Utils
@@ -101,3 +117,12 @@
 }
 
 
+.anchor-disabled,
+.non-clickable {
+   pointer-events: none;
+   cursor: default;
+}
+
+.cursor-default {
+  cursor: default;
+}

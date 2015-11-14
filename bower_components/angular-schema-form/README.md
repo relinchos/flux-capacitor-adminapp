@@ -1,4 +1,4 @@
-Angular Schema Form
+Angular Schema Form [![alt text][1.1]][1]
 ===================
 [![Build Status](https://travis-ci.org/Textalk/angular-schema-form.svg?branch=master)](https://travis-ci.org/Textalk/angular-schema-form)
 [![Coverage Status](https://coveralls.io/repos/Textalk/angular-schema-form/badge.png?branch=master)](https://coveralls.io/r/Textalk/angular-schema-form?branch=development)
@@ -8,15 +8,14 @@ Angular Schema Form
 
 Generate forms from JSON schemas using AngularJS!
 
-Web Page / Twitter
+Web Page
 --------
-[schemaform.io](http://schemaform.io) / [@SchemaFormIO](http://twitter.com/SchemaFormIO)
+[http://textalk.github.io/angular-schema-form/](http://textalk.github.io/angular-schema-form/)
 
 Demo Time!
 ----------
-[Try out the example page](http://schemaform.io/examples/bootstrap-example.html). Try editing the schema or form definition and see what comes out!
-
-Now you can save your code and share it!
+[Try out the example page](http://textalk.github.io/angular-schema-form/examples/bootstrap-example.html).
+Try editing the schema or form definition and see what comes out!
 
 What is it?
 ----------
@@ -42,10 +41,7 @@ apart from JSON Form?
 
 Documentation
 -------------
-You can find [all documentation here](docs/index.md), it covers all the different field types
-and their options.
-
-It also covers how to [extend angular schema form with your own field types](https://github.com/Textalk/angular-schema-form/blob/master/docs/extending.md).
+There is one section of documentation covering [defaults and form types](docs/index.md). There is another section for how you [extend angular schema form with your own types](https://github.com/Textalk/angular-schema-form/blob/master/docs/extending.md).
 
 Basic Usage
 -----------
@@ -201,3 +197,8 @@ $ bower install
 $ sudo npm install -g karma-cli
 $ karma start karma.conf.js
 ```
+
+<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[1]: http://www.twitter.com/ngSchemaForm
+[1.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)

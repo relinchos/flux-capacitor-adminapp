@@ -79,10 +79,6 @@
       {
         "name": "imageOmniGallery",
         "file": "app/common/web_component/image-omni-gallery/image-omni-gallery.js"
-      },
-      {
-        "name": "course",
-        "file": "app/component/course/course.js"
       }
     ]
   }

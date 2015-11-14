@@ -20,4 +20,4 @@ try {
   deps.push('angularSpectrumColorpicker');
 } catch (e) {}
 
-var schemaForm = angular.module('schemaForm', deps);
+angular.module('schemaForm', deps);

@@ -15,14 +15,29 @@ angular.module('account')
 
       _.assign(session.user, user);
 
+      session.user.username = session.user.firstName;
+
       if ( rememberMe ){
-        $localstorage.setObject( 'FcSession__userData', user );
+        session.save( user );
       };
 
       if(_.isFunction( callback)){
-        callback();
+        callback( session );
       };
     });
+  };
+
+
+
+
+  session.save = function( data ){
+    if(_.isUndefined( data )){
+      if( session.loggedIn && session.user ){
+        $localstorage.setObject( 'FcSession__userData', session.user ); 
+      };
+    }else{
+      $localstorage.setObject( 'FcSession__userData', data ); 
+    };  
   };
   
   
@@ -52,7 +67,7 @@ angular.module('account')
 
   session.destroy = function ( callback ) {
     session.reset(function(){
-      $localstorage.setObject( 'FcSession__userData', '' );
+      session.save( '' );
       if(_.isFunction( callback)){
         callback();
       };

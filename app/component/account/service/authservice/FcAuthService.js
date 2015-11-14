@@ -1,5 +1,7 @@
 angular.module('account')
-.factory('FcAuthService', function ( $http, $state, LoopBackAuth, FcSession, User, _ ) {
+.factory('FcAuthService', function ( $http, $state, LoopBackAuth, FcSession, User, _, FcConfig ) {
+	
+	var mainState = _.get(FcConfig, 'app.mainState', 'main');
 	
 	var authService = {};
 	var loginBlockedRoute = false;
@@ -19,8 +21,9 @@ angular.module('account')
 				console.log('login suc!', res );
 				var user = res.user;
 				var idsession = res.id;
-				FcSession.create( idsession, user, rememberMe, function(){ 
-					$state.go('main');
+				FcSession.create( idsession, user, rememberMe, function( session ){ 
+					session.user.roles.push('authenticated');
+					$state.go( mainState );
 				} );
 
 				if (_.isFunction( sucCb )){
@@ -53,11 +56,11 @@ angular.module('account')
 	};
 
 
-	authService.logout = function () {
+	authService.logout = function ( stateToGo ) {
 
 		var killAppSession = function(){
 			FcSession.destroy();
-			$state.go('account.login');
+			$state.go( stateToGo ||  mainState );
 		}; 
 
 		// Loopback specific logout:
@@ -79,14 +82,16 @@ angular.module('account')
 	};
 
 
-	authService.signup = function ( credentials ) { return;
+	authService.signup = function (  rememberMe, credentials, sucCb, failCb ) { 
 		User.create(
 			credentials, 
 			function(res){
 				console.log('signup suc!', res );
+				authService.login( rememberMe, credentials, sucCb, failCb );
 			},
 			function(res){
 				console.error('signup err!', res );
+				if(typeof failCb === 'function'){ failCb( res ) };
 			});
 	};
 
@@ -102,12 +107,30 @@ angular.module('account')
 	};
 
 
-	authService.isAuthorized = function (authorizedRoles) {
+	authService.isAuthorized = function ( authorizedRoles ) {
 		if (!angular.isArray(authorizedRoles)) {
 			authorizedRoles = [authorizedRoles];
 		}
 		return (authService.isAuthenticated() &&
 			authorizedRoles.indexOf(FcSession.userRole) !== -1);
+	};
+
+
+	authService.changePassword = function( credentials, sucCb, failCb ){
+		User.changePassword( credentials, function( value, httpResponse ){
+
+				authService.logout('account.login');
+
+				if (_.isFunction( sucCb )){
+					sucCb( value, httpResponse );
+				};
+
+		}, failCb );
+	};
+
+
+	authService.resetPassword = function( userEmail, sucCb, failCb ){
+		User.resetPassword( {"email": userEmail }, sucCb, failCb );
 	};
 
 

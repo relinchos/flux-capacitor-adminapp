@@ -1,15 +1,10 @@
 angular.module('account').controller('LoginCtrl',function($scope,  AUTHENTICATION, FcAuthService){
 
 
-	$scope.credentials = {
-		email: 'demoadmin@demohost.demo',
-		password: 'demopass'
-	};
+	$scope.credentials = {};
 	$scope.rememberMe = AUTHENTICATION.defaultRememberMe;
 
 	$scope.loginFailed = false;
-
-
 
 	$scope.submit = function( formData ){
 

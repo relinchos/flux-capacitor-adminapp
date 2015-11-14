@@ -8,6 +8,153 @@
 		{{ prop }}
 	</div> -->
 
-	<div jsonify="user"></div>
+	<!-- <div jsonify="user"></div> -->
 
+
+			<!-- 
+
+			<div class="row">
+				<img src="..." alt="..." class="img-rounded">
+			</div>
+
+			<div class="row">
+				<a class="btn btn-default btn-xs">Add photo...</a>
+			</div>
+			
+		-->
+
+
+
+		<div class="row">
+
+			<div class="col-sm-5 col-md-4">
+
+
+
+			<ul class=" nav nav-pills  nav-stacked mt-30">
+				<li ng-repeat="step in procSchema" role="presentation" ng-class="{active: procStage == step.name, disabled:  step.isDisabled() }">
+
+
+					<a ng-attr-disabled=" {{ !step.isDisabled() ? 'disabled' : '' }}" ng-click=" !step.isDisabled() ? setProcStage( $index ) : null ">
+
+						<!-- <strong class="mr-10" ng-if="context.stateAction == 'create'">{{ $index + 1 }}</strong>  -->
+
+						<strong class=" text-capitalize" ng-bind="step.title"></strong>
+
+
+						<span ng-if="step.form.formElement.$valid && context.stateAction != 'details'" class="text-success pull-right glyphicon glyphicon-ok"></span>
+
+						<span ng-if="!step.form.formElement.$valid  && context.stateAction != 'details'" class="text-warning pull-right glyphicon glyphicon-warning-sign"></span>
+
+					</a>
+
+
+
+				</li>
+
+			</ul>
+
+				<!-- 
+				<h5>Status in school</h5>
+
+				<fui-switch ng-model="modelSwitch1" data-on-color="success" ></fui-switch><span> Teacher</span>
+				{{ modelSwitch1 }}
+
+				<ul class="nav nav-pills  nav-stacked mt-30">
+					<li ng-repeat="step in canBeAddedList" >
+						step ad: {{ step.title }}
+					</li>
+				</ul>
+
+			-->
+		</div>
+
+		<div class=" col-sm-7 col-md-8">
+
+			<div ng-repeat="step in procSchema" ng-show="  true " class="procSchema">
+
+				<!-- Form -->
+				<div class="row mt-30 ">
+
+					<div class="col-sm-offset-2 col-sm-9 col-md-offset-3 col-md-7" >
+
+						<!-- {{ step.form.formElement.$dirty }} -->
+						<form ng-attr-intname="{{step.form.name}}" name="step.form.formElement" sf-schema="step.form.sfSchema" sf-form="step.form.sfForm" sf-model="step.data.editableModel" sf-options="step.form.sfOptions"  ng-init="assignForm(this , step)"></form>
+
+						<!-- <div jsonify="step.form.formElement"></div> -->
+
+					</div>
+				</div>
+
+</div>
+
+
+			<div>
+			<h4>Associated person</h4>
+			<span ng-bind="associatedPerson.fullName"></span>
+			<span class="ml-15"><a class="btn btn-xs btn-default">Cambiar</a></span>
+			</div>
+
+		</div>
+
+		<!-- Action buttons -->
+		<div class="row ">
+			<div class="col-sm-12 text-center mt-30 mb-30">
+
+				<hr>
+
+				<div class="clearfix mt-20 mb-20">
+
+					<a class="btn btn-primary  text-capitalize" ng-if="procCurrentIndex -1 >= 0 " ng-click="procGo( procCurrentIndex - 1 )" ><span class="glyphicon glyphicon-arrow-left mr-10"></span> {{ procSchema[procCurrentIndex-1].title || 'Previous'}} </a>
+
+					<a class="btn btn-primary  text-capitalize" ng-if="procSchema[procCurrentIndex+1]" ng-click="procGo( procCurrentIndex + 1 )" >{{ procSchema[procCurrentIndex+1].title || 'Next'}} <span class="glyphicon glyphicon-arrow-right ml-10"></span></a>
+
+
+				</div>
+
+				<hr>
+
+			</div>
+		</div>			
+
+
+
+		<!-- <div jsonify="personExposedModel"></div> -->
+
+
+
+	</div>
+
+
+
+	<div ng-if="FcSession.userHasRole('admin')" class="text-center mt-30">
+		<hr>
+		<button class="btn btn-xs btn-default" ng-click="isCollapsed = !isCollapsed">
+			<span class="glyphicon glyphicon-eye-open mr-10"></span> Models data
+		</button>
+		<div collapse="!isCollapsed " class="text-left">
+			<div class="well well-lg">
+
+				<div class="row mt-30">
+
+					<h4>procCurrentStep.internal.currRepo</h4>
+					<div class="col-sm-6" jsonify="procCurrentStep.data.editableModel"></div>
+					<div class="col-sm-6" jsonify="procCurrentStep.internal.currRepo.originalSnapshot"></div>
+				</div>
+
+
+
+
+				<div class="row mt-30">
+					<h4>specificProfileData</h4>
+					<!-- <div jsonify="specificProfileData"></div> -->
+				</div>
+
+				<div class="row mt-30">
+					<h4>canBeAddedList</h4>
+					<!-- <div jsonify="canBeAddedList"></div> -->
+				</div>
+			</div> 
+		</div>
+	</div>
 </div>

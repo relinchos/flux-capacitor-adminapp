@@ -327,7 +327,7 @@ angular.module('person').controller('PersonDetailsCtrl',function($scope, $rootSc
 
 			"teacherPhoto": {
 				"type": "string",
-				"default": "http://www.in-geniousclub.com/image_server/repo/ing_web_img_"	
+				"default": ""	
 			},
 			
 			"titles": {

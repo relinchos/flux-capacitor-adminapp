@@ -3,10 +3,7 @@ angular.module('adminApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate'
 angular.module('adminApp').config(function($stateProvider, $urlRouterProvider, $modalProvider, $provide ) {
 
 
-    $stateProvider.state('main', {
-        url: '/',
-        template: '<div base-layout></div>'
-    });
+    
 
 
     /* Add New States Above */
